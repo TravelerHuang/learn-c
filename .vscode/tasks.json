@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "build", // 与launch.json中preLaunchTask相对应
+            "command": "gcc", // 编译命令
+            "args": [
+                "-g", // 生成和调试有关的信息
+                "${file}", // 当前文件
+                "-o", // 指定输出文件名
+                "${fileDirname}/${fileBasenameNoExtension}" // 输出文件为可执行文件
+            ],
+            "options": {
+                "cwd": "/usr/bin" // 指定命令运行目录
+            },
+            "problemMatcher": [
+                "$gcc" // 捕捉gcc输出信息并显示在问题窗口中
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true // 设为false可避免单独调用该任务,防止重复编译
+            }
+        }
+    ]
+}

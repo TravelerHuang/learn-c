@@ -1,0 +1,7 @@
+# ignore no file extension
+*
+!*/
+!*.*
+
+.idea
+out
